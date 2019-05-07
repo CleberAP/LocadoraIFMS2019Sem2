@@ -5,10 +5,39 @@
  */
 package br.com.locadora.mapeamento.pessoa;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+
 /**
  *
  * @author KremerPereira
  */
-public class Cliente {
+
+@Entity
+public class Cliente extends Pessoa implements Serializable{
+    
+    private boolean pessoaFisica;
+    private boolean bomPagador;
+    
+    public Cliente (){
+        this.pessoaFisica = true;
+        this.bomPagador = true;
+    }
+
+    public boolean isPessoaFisica() {
+        return pessoaFisica;
+    }
+
+    public void setPessoaFisica(boolean pessoaFisica) {
+        this.pessoaFisica = pessoaFisica;
+    }
+
+    public boolean isBomPagador() {
+        return bomPagador;
+    }
+
+    public void setBomPagador(boolean bomPagador) {
+        this.bomPagador = bomPagador;
+    }
     
 }
